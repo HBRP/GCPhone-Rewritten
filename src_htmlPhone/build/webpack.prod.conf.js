@@ -10,7 +10,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 
 const env = config.build.env
 
@@ -55,16 +54,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     },
   },
   plugins: [
-    new SentryWebpackPlugin({
-      // sentry-cli configuration
-      authToken: process.env.SENTRY_AUTH_TOKEN,
-      org: "gcphone",
-      project: "app",
-
-      // webpack specific configuration
-      include: ".",
-      ignore: ["node_modules", "webpack.base.conf.js", "webpack.base.dev.js", "webpack.base.prod.js"],
-    }),
     new MiniCssExtractPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
     }),

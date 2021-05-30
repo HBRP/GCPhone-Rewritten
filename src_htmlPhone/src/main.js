@@ -7,8 +7,8 @@ import PhoneAPI from './PhoneAPI'
 import Notification from './Notification'
 import AutoFocus from './directives/autofocus'
 import {library} from '@fortawesome/fontawesome-svg-core'
-import * as Sentry from "@sentry/vue";
-import { Integrations } from "@sentry/tracing";
+//import * as Sentry from "@sentry/vue";
+//import { Integrations } from "@sentry/tracing";
 import VueUnits from 'vue-units';
 import {
   faAngleLeft,
@@ -149,6 +149,7 @@ window.APP = new Vue({
   render: h => h(App)
 })
 
+/*
 Sentry.init({
   Vue,
   environment: process.env.NODE_ENV,
@@ -160,3 +161,4 @@ Sentry.init({
   tracesSampleRate: 1.0,
   logErrors: process.env.NODE_ENV !== 'production',
 });
+*/

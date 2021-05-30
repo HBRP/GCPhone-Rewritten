@@ -30,13 +30,13 @@
         class="group inputText"
         data-type="text"
         data-model="number"
-        data-maxlength="10"
+        data-maxlength="12"
       >
         <input
           id="contact-number"
           v-model="contact.number"
           type="text"
-          maxlength="10"
+          maxlength="12"
         >
         <span class="highlight" />
         <span class="bar" />
