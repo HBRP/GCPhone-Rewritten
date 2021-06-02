@@ -16,18 +16,10 @@
         class="tweet_send"
         @click="tweeter"
       >{{ IntlString('APP_TWITTER_BUTTON_ACTION_TWEETER') }}</span>
-      <div 
-        class="group" 
-        data-type="button" 
-        @click.stop="take_photograph"
-      >
-        <input 
-          type="button"
-          class="tweet_send"
-          :value="IntlString('APP_TWITTER_ACCOUNT_TWEET_PHOTO_TAKE')"
-          @click.stop="take_photograph"
-        >
-      </div>
+      <span
+        class="tweet_photo"
+        @click="take_photograph"
+      >{{ IntlString('APP_TWITTER_ACCOUNT_TWEET_PHOTO_TAKE') }}</span>
     </div>
   </div>
 </template>
@@ -143,6 +135,25 @@ export default {
 }
 
 .tweet_send:hover {
+  cursor: pointer;
+  background-color: #0084b4;
+}
+
+.tweet_photo {
+  align-self: flex-end;
+  width: 120px;
+  height: 32px;
+  float: right;
+  border-radius: 16px;
+  background-color: rgb(29, 161, 242);
+  color: white;
+  line-height: 32px;
+  text-align: center;
+  margin: 0px 20px;
+  font-size: 16px;
+}
+
+.tweet_photo:hover {
   cursor: pointer;
   background-color: #0084b4;
 }
