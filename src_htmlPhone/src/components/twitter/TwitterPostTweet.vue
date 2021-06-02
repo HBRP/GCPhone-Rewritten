@@ -16,6 +16,18 @@
         class="tweet_send"
         @click="tweeter"
       >{{ IntlString('APP_TWITTER_BUTTON_ACTION_TWEETER') }}</span>
+      <div 
+        class="group" 
+        data-type="button" 
+        @click.stop="take_photograph"
+      >
+        <input 
+          type="button"
+          class="tweet_send"
+          :value="IntlString('APP_TWITTER_ACCOUNT_TWEET_PHOTO_TAKE')"
+          @click.stop="take_photograph"
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -59,6 +71,16 @@ export default {
           if (message.length !== 0) {
             this.twitterPostTweet({message})
           }
+        }
+      } catch (e) {
+        await this.$phoneAPI.log(e)
+      }
+    },
+    async take_photograph() {
+      try {
+        const {url} = await this.$phoneAPI.takePhoto()
+        if (url !== null && url !== undefined) {
+          await this.twitterPostTweet({message: url})
         }
       } catch (e) {
         await this.$phoneAPI.log(e)
