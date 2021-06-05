@@ -26,16 +26,39 @@ function formatTime(time) {
 }
 
 const defaultLocales = {
-  'fr_FR': [
-    "à l'instant",
-    ["il y a %s seconde", "il y a %s secondes"],
-    ["il y a %s minute", "il y a %s minutes"],
-    ["il y a %s heure", "il y a %s heures"],
-    ["il y a %s jour", "il y a %s jours"],
-    ["il y a %s semaine", "il y a %s semaines"],
-    ["il y a %s mois", "il y a %s mois"],
-    ["il y a %s an", "il y a %s ans"]
+  'fr_FR': 
+  [
+      "just now",
+      [
+        "%s second ago",
+        "%s seconds ago"
+      ],
+      [
+        "%s minute ago",
+        "%s minutes ago"
+      ],
+      [
+        "%s hour ago",
+        "%s hours ago"
+      ],
+      [
+        "%s day ago",
+        "%s days ago"
+      ],
+      [
+        "%s week ago",
+        "%s weeks ago"
+      ],
+      [
+        "%s month ago",
+        "%s months ago"
+      ],
+      [
+        "%s year ago",
+        "%s years ago"
+      ]
   ]
+
 }
 export default function install(Vue, {name = 'timeago', locale = 'fr_FR', locales = defaultLocales} = {}) {
 
